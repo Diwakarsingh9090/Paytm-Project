@@ -1,10 +1,14 @@
 const express = require("express");
-const cors = require("cors");
 
+//Here cors is used to allow cross-origin requests from the frontend to the backend
+//  without cors, the frontend will not be able to make requests to the backend
+//and it should be used above the routes to work properly..
+const cors = require("cors");
 app.use(cors());
-app,use(express.json());
+
+app.use(express.json());
+
 const mainRouter = require("./routes/index");
-const { use } = require("react");
 
 const app = express();
 app.use("/api/v1", mainRouter);
